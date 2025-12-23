@@ -1,16 +1,130 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <!-- Definisce il set di caratteri (fondamentale per gli accenti) -->
     <meta charset="UTF-8">
-    
-    <!-- Rende il sito leggibile su mobile (Responsive) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Il mio Portfolio</title>
+    <title>Giovanni Del Bianco | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Google (Inter per un look moderno) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Icone (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <h1>Ciao, sono Giovanni Del Bianco</h1>
-    <p>Studente di informatica. Benvenuti nel mio spazio web.</p>
+
+    <!-- NAVIGAZIONE -->
+    <nav>
+        <div class="logo">GDB.</div>
+        <ul>
+            <li><a href="#about">Chi sono</a></li>
+            <li><a href="#quantum">Quantum</a></li>
+            <li><a href="#cyber">Cybersec</a></li>
+            <li><a href="#progetti">Progetti</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header id="about">
+        <div class="container hero-content">
+            <div class="text-col">
+                <h1>Ciao, sono <span class="highlight">Giovanni Del Bianco</span></h1>
+                <h2>Studente di Informatica & Tech Enthusiast</h2>
+                <p>
+                    Benvenuti nel mio spazio digitale. Studio presso l'Università di Pisa.
+                    Il mio focus è spingere i limiti del calcolo con il <b>Quantum Computing</b> 
+                    e proteggere le infrastrutture digitali con la <b>Cybersecurity</b>.
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/Giovanni-Del-Bianco" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="mailto:tuaemail@esempio.com"><i class="fas fa-envelope"></i> Email</a>
+                </div>
+            </div>
+            <div class="img-col">
+                <img src="img/profile.jpg" alt="Foto di Giovanni">
+            </div>
+        </div>
+    </header>
+
+    <!-- SEZIONE QUANTUM -->
+    <section id="quantum" class="bg-darker">
+        <div class="container">
+            <h3 class="section-title">Quantum Computing <i class="fas fa-atom"></i></h3>
+            <p class="section-subtitle">Esplorazioni nel mondo dei Qubit e algoritmi quantistici.</p>
+            
+            <div class="grid">
+                <!-- CARD 1 -->
+                <a href="LINK_AL_TUO_GITHUB_REPO" class="card" target="_blank">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-content">
+                        <h4>Qiskit Algorithm</h4>
+                        <p>Implementazione dell'algoritmo di Shor utilizzando Qiskit di IBM.</p>
+                    </div>
+                </a>
+
+                <!-- CARD 2 -->
+                <a href="#" class="card" target="_blank">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-content">
+                        <h4>Quantum Teleportation</h4>
+                        <p>Simulazione di teletrasporto di stati quantistici.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE CYBERSECURITY -->
+    <section id="cyber">
+        <div class="container">
+            <h3 class="section-title">Cybersecurity <i class="fas fa-shield-alt"></i></h3>
+            <p class="section-subtitle">Pentesting, analisi malware e sicurezza delle reti.</p>
+            
+            <div class="grid">
+                <!-- CARD 1 -->
+                <a href="#" class="card" target="_blank">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-content">
+                        <h4>Network Sniffer</h4>
+                        <p>Tool in Python per l'analisi dei pacchetti di rete.</p>
+                    </div>
+                </a>
+                 <!-- Aggiungi altre card qui -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE ALTRI PROGETTI -->
+    <section id="progetti" class="bg-darker">
+        <div class="container">
+            <h3 class="section-title">Altri Progetti <i class="fas fa-code"></i></h3>
+            <p class="section-subtitle">Sviluppo Web, App universitarie e utility.</p>
+            
+            <div class="grid">
+                <!-- CARD 1 -->
+                <a href="#" class="card" target="_blank">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-content">
+                        <h4>Gestore Esami Java</h4>
+                        <p>Applicazione Desktop per la gestione della carriera universitaria.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contatti">
+        <div class="container">
+            <h2>Lavoriamo insieme?</h2>
+            <p>Sono sempre aperto a nuove sfide e collaborazioni.</p>
+            <div class="contact-links">
+                <a href="mailto:tuaemail@esempio.com">tuaemail@esempio.com</a>
+            </div>
+            <p class="copyright">&copy; 2025 Giovanni Del Bianco. Costruito con HTML & CSS.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
