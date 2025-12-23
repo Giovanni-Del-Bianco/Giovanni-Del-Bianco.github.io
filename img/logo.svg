@@ -1,10 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Sfondo: un quadrato scuro con bordi arrotondati (stile app) -->
   <rect x="0" y="0" width="64" height="64" rx="14" fill="#0b1120"/>
-  
-  <!-- Bordo sottile per farlo risaltare sui tab scuri -->
   <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#1e293b" stroke-width="2"/>
-
-  <!-- La lettera G in verde Cyber, centrata e grassetto -->
   <text x="32" y="47" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#10b981" text-anchor="middle">G</text>
 </svg>
