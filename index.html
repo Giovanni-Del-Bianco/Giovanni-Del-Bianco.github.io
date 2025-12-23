@@ -3,113 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giovanni Del Bianco | Portfolio</title>
+    <title>Giovanni Del Bianco | Cybersecurity & Quantum</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Google (Inter per un look moderno) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Icone (FontAwesome) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font e Icone -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <!-- NAVIGAZIONE -->
     <nav>
-        <div class="logo">GDB.</div>
+        <div class="logo">GDB<span style="color:var(--accent-cyber)">.</span></div>
         <ul>
-            <li><a href="#about">Chi sono</a></li>
-            <li><a href="#quantum">Quantum</a></li>
             <li><a href="#cyber">Cybersec</a></li>
-            <li><a href="#progetti">Progetti</a></li>
-            <li><a href="#contatti">Contatti</a></li>
+            <li><a href="#quantum">Quantum</a></li>
+            <li><a href="#progetti">Dev</a></li>
+            <li><a href="#about">Chi sono</a></li>
+            <li><a href="#contatti" class="btn-contact">Contattami</a></li>
         </ul>
     </nav>
 
-    <!-- HEADER / HERO SECTION -->
-    <header id="about">
+    <!-- HERO SECTION -->
+    <header>
         <div class="container hero-content">
             <div class="text-col">
+                <div class="badge">Studente Magistrale in Cybersecurity</div>
                 <h1>Ciao, sono <span class="highlight">Giovanni Del Bianco</span></h1>
-                <h2>Studente di Informatica & Tech Enthusiast</h2>
+                <h2>Laureato in Informatica | Università di Pisa</h2>
                 <p>
-                    Benvenuti nel mio spazio digitale. Studio presso l'Università di Pisa.
-                    Il mio focus è spingere i limiti del calcolo con il <b>Quantum Computing</b> 
-                    e proteggere le infrastrutture digitali con la <b>Cybersecurity</b>.
+                    Unisco la passione per l'Offensive Security e la crittografia con la ricerca d'avanguardia nel Quantum Computing.
+                    Ex partecipante <b>CyberChallenge.IT</b>, attualmente focalizzato su Network Security, AI for Cyber e sistemi Embedded.
                 </p>
                 <div class="social-links">
                     <a href="https://github.com/Giovanni-Del-Bianco" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="mailto:tuaemail@esempio.com"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://www.linkedin.com/in/giovannidelbianco" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="mailto:giovanni.delbianco2002@gmail.com"><i class="fas fa-envelope"></i> Email</a>
                 </div>
             </div>
             <div class="img-col">
-                <img src="img/profile.jpg" alt="Foto di Giovanni">
+                <!-- Assicurati che la foto si chiami profile.jpg e sia nella cartella img -->
+                <img src="img/profile.jpg" alt="Giovanni Del Bianco">
             </div>
         </div>
     </header>
 
-    <!-- SEZIONE QUANTUM -->
-    <section id="quantum" class="bg-darker">
+    <!-- 1. SEZIONE CYBERSECURITY (PRIORITÀ ALTA) -->
+    <section id="cyber" class="bg-darker">
         <div class="container">
-            <h3 class="section-title">Quantum Computing <i class="fas fa-atom"></i></h3>
-            <p class="section-subtitle">Esplorazioni nel mondo dei Qubit e algoritmi quantistici.</p>
+            <h3 class="section-title"><i class="fas fa-shield-halved"></i> Cybersecurity</h3>
+            <p class="section-subtitle">Network Security, CTF, Malware Analysis & AI Defense.</p>
             
             <div class="grid">
-                <!-- CARD 1 -->
-                <a href="LINK_AL_TUO_GITHUB_REPO" class="card" target="_blank">
+                <!-- CARD 1: CyberChallenge -->
+                <a href="#" class="card cyber-card" target="_blank">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-content">
+                        <span class="tag cyber">CyberChallenge.IT 2024</span>
+                        <h4>Partecipazione Programma Nazionale</h4>
+                        <p>Training intensivo su Hardware/Software Security, Crittografia e Web Security. Attività pratiche di CTF (Capture The Flag).</p>
+                    </div>
+                </a>
+
+                <!-- CARD 2: Progetto Magistrale (ESEMPIO) -->
+                <a href="#" class="card cyber-card" target="_blank">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1563206767-5b1d97299337?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-content">
+                        <span class="tag cyber">University Project</span>
+                        <h4>Network Sniffer & Analysis</h4>
+                        <p>Tool sviluppato in Python/C per l'intercettazione e l'analisi dei pacchetti di rete a basso livello.</p>
+                    </div>
+                </a>
+
+                 <!-- CARD 3: Altro (ESEMPIO) -->
+                 <a href="#" class="card cyber-card" target="_blank">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-content">
+                        <span class="tag cyber">AI Security</span>
+                        <h4>Adversarial ML Attack</h4>
+                        <p>Studio e implementazione di attacchi contro sistemi di Machine Learning per testarne la robustezza.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. SEZIONE QUANTUM COMPUTING -->
+    <section id="quantum">
+        <div class="container">
+            <h3 class="section-title"><i class="fas fa-atom"></i> Quantum Computing</h3>
+            <p class="section-subtitle">Algoritmi Quantistici, Qiskit & NISQ Systems.</p>
+            
+            <div class="grid">
+                <!-- CARD TESI -->
+                <a href="#" class="card quantum-card" target="_blank">
                     <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80');"></div>
                     <div class="card-content">
-                        <h4>Qiskit Algorithm</h4>
-                        <p>Implementazione dell'algoritmo di Shor utilizzando Qiskit di IBM.</p>
+                        <span class="tag quantum">Tesi Triennale</span>
+                        <h4>Esecuzione Distribuita su NISQ</h4>
+                        <p>Studio sperimentale sull’unione di strategie di esecuzione distribuita e incrementale per sistemi quantistici.</p>
                     </div>
                 </a>
 
-                <!-- CARD 2 -->
-                <a href="#" class="card" target="_blank">
+                <!-- CARD PROGETTO -->
+                <a href="#" class="card quantum-card" target="_blank">
                     <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80');"></div>
                     <div class="card-content">
-                        <h4>Quantum Teleportation</h4>
-                        <p>Simulazione di teletrasporto di stati quantistici.</p>
+                        <span class="tag quantum">Algorithm</span>
+                        <h4>Shor's Algorithm Impl.</h4>
+                        <p>Implementazione e analisi dell'algoritmo di fattorizzazione di Shor utilizzando framework IBM Qiskit.</p>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- SEZIONE CYBERSECURITY -->
-    <section id="cyber">
-        <div class="container">
-            <h3 class="section-title">Cybersecurity <i class="fas fa-shield-alt"></i></h3>
-            <p class="section-subtitle">Pentesting, analisi malware e sicurezza delle reti.</p>
-            
-            <div class="grid">
-                <!-- CARD 1 -->
-                <a href="#" class="card" target="_blank">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="card-content">
-                        <h4>Network Sniffer</h4>
-                        <p>Tool in Python per l'analisi dei pacchetti di rete.</p>
-                    </div>
-                </a>
-                 <!-- Aggiungi altre card qui -->
-            </div>
-        </div>
-    </section>
-
-    <!-- SEZIONE ALTRI PROGETTI -->
+    <!-- 3. SEZIONE ALTRI PROGETTI (DEV) -->
     <section id="progetti" class="bg-darker">
         <div class="container">
-            <h3 class="section-title">Altri Progetti <i class="fas fa-code"></i></h3>
-            <p class="section-subtitle">Sviluppo Web, App universitarie e utility.</p>
+            <h3 class="section-title"><i class="fas fa-code"></i> Sviluppo & Engineering</h3>
+            <p class="section-subtitle">Progetti Accademici, Web Dev e Utility.</p>
             
             <div class="grid">
-                <!-- CARD 1 -->
-                <a href="#" class="card" target="_blank">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80');"></div>
+                <!-- CARD WEB -->
+                <a href="#" class="card dev-card" target="_blank">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&w=600&q=80');"></div>
                     <div class="card-content">
-                        <h4>Gestore Esami Java</h4>
-                        <p>Applicazione Desktop per la gestione della carriera universitaria.</p>
+                        <span class="tag dev">Full Stack</span>
+                        <h4>Web App React & Node</h4>
+                        <p>Applicazione web moderna sviluppata con stack MERN (MongoDB, Express, React, Node).</p>
                     </div>
                 </a>
+
+                <!-- CARD JAVA/GENERIC -->
+                <a href="#" class="card dev-card" target="_blank">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-content">
+                        <span class="tag dev">Java</span>
+                        <h4>Software Gestionale</h4>
+                        <p>Applicazione desktop per la gestione di risorse universitarie con pattern MVC.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CHI SONO (DETTAGLIATO) -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3 class="section-title">Chi Sono</h3>
+                    <p>
+                        Nel mio percorso ho sviluppato una solida base tecnico-scientifica in informatica, matematica e logica, 
+                        maturando passione per l’innovazione e la risoluzione di problemi complessi.
+                    </p>
+                    <p>
+                        Il mio obiettivo professionale è crescere come esperto nel campo della <b>cybersecurity</b>, 
+                        unendo le competenze acquisite con l’interesse per il calcolo distribuito e il quantum computing.
+                    </p>
+                    
+                    <div class="skills-container">
+                        <h4>Tech Stack</h4>
+                        <div class="tags">
+                            <span>Python</span> <span>Java</span> <span>C</span> <span>JavaScript</span>
+                            <span>React.js</span> <span>Node.js</span> <span>SQL</span> <span>OCaml</span>
+                            <span>Git</span> <span>Linux</span> <span>Qiskit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-timeline">
+                    <div class="timeline-item">
+                        <div class="date">Set 2025 - Presente</div>
+                        <h4>Laurea Magistrale in Cybersecurity</h4>
+                        <p class="school">Università di Pisa</p>
+                        <p class="details">Focus su: Data Security, AI for Cyber, Network Hacking, Embedded Security.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="date">Giu 2024</div>
+                        <h4>CyberChallenge.IT</h4>
+                        <p class="school">Cybersecurity National Lab</p>
+                        <p class="details">Attestato di partecipazione e gara locale. Formazione avanzata in sicurezza offensiva e difensiva.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="date">2021 - 2025</div>
+                        <h4>Laurea Triennale in Informatica</h4>
+                        <p class="school">Università di Pisa</p>
+                        <p class="details">Tesi in Quantum Computing. Basi solide di Ingegneria del Software e Algoritmi.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -117,12 +201,17 @@
     <!-- FOOTER -->
     <footer id="contatti">
         <div class="container">
-            <h2>Lavoriamo insieme?</h2>
-            <p>Sono sempre aperto a nuove sfide e collaborazioni.</p>
-            <div class="contact-links">
-                <a href="mailto:tuaemail@esempio.com">tuaemail@esempio.com</a>
+            <h2>Pronto a collaborare?</h2>
+            <p>Se desideri scambiare idee o valutare una collaborazione, scrivimi.</p>
+            <div class="contact-big">
+                <a href="mailto:giovanni.delbianco2002@gmail.com">giovanni.delbianco2002@gmail.com</a>
             </div>
-            <p class="copyright">&copy; 2025 Giovanni Del Bianco. Costruito con HTML & CSS.</p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/giovannidelbianco" target="_blank">LinkedIn</a>
+                <span class="separator">/</span>
+                <a href="https://github.com/Giovanni-Del-Bianco" target="_blank">GitHub</a>
+            </div>
+            <p class="copyright">&copy; 2025 Giovanni Del Bianco.</p>
         </div>
     </footer>
 
