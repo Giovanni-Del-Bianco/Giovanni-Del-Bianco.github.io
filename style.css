@@ -32,18 +32,22 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 15px 30px; /* Ridotto leggermente per mobile */
     position: sticky;
     top: 0;
-    background-color: rgba(11, 17, 32, 0.9);
+    background-color: rgba(11, 17, 32, 0.95);
     backdrop-filter: blur(12px);
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.logo { font-weight: 700; font-size: 1.4rem; letter-spacing: -0.5px; }
+
+.logo { font-weight: 700; font-size: 1.4rem; letter-spacing: -0.5px; z-index: 1001; }
+
+/* Menu Desktop Standard */
 nav ul { display: flex; gap: 25px; align-items: center; }
 nav ul li a { color: var(--text-secondary); font-size: 0.95rem; font-weight: 500; }
 nav ul li a:hover { color: var(--text-primary); }
+
 .btn-contact {
     border: 1px solid var(--accent-cyber);
     color: var(--accent-cyber) !important;
@@ -51,6 +55,42 @@ nav ul li a:hover { color: var(--text-primary); }
     border-radius: 50px;
 }
 .btn-contact:hover { background: var(--accent-cyber); color: #000 !important; }
+
+/* Icona Hamburger (nascosta su PC) */
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* RESPONSIVE NAV (MOBILE) */
+@media (max-width: 768px) {
+    .menu-icon { display: block; } /* Mostra l'hamburger */
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Nascosto a destra */
+        width: 70%;   /* Occupa il 70% dello schermo */
+        height: 100vh;
+        background-color: var(--bg-secondary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+
+    /* Classe che viene aggiunta con JS quando apri il menu */
+    nav ul.active {
+        right: 0; /* Scivola dentro */
+    }
+
+    nav ul li a { font-size: 1.2rem; }
+}
 
 /* HERO */
 header { padding: 100px 0; }

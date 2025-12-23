@@ -17,14 +17,21 @@
 <body>
 
     <!-- NAVIGAZIONE -->
+    <!-- NAVIGAZIONE RESPONSIVE -->
     <nav>
         <div class="logo">GDB<span style="color:var(--accent-cyber)">.</span></div>
-        <ul>
-            <li><a href="#cyber">Cybersecurity</a></li>
-            <li><a href="#quantum">Quantum</a></li>
-            <li><a href="#progetti">Dev</a></li>
-            <li><a href="#about">who I am</a></li>
-            <li><a href="#contatti" class="btn-contact">contact me</a></li>
+        
+        <!-- Icona Menu Mobile (Hamburger) -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul id="nav-links">
+            <li><a href="#cyber" onclick="toggleMenu()">Cybersec</a></li>
+            <li><a href="#quantum" onclick="toggleMenu()">Quantum</a></li>
+            <li><a href="#progetti" onclick="toggleMenu()">Dev</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About Me</a></li>
+            <li><a href="#contatti" class="btn-contact" onclick="toggleMenu()">Contact Me</a></li>
         </ul>
     </nav>
 
@@ -288,6 +295,14 @@
             <p class="copyright">&copy; 2025 Giovanni Del Bianco.</p>
         </div>
     </footer>
+
+    <!-- SCRIPT MENU MOBILE -->
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-links');
+            nav.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
