@@ -58,10 +58,9 @@ img {
    LAYOUT GENERALE
    ========================================= */
 .container {
-    /* Questo risolve il problema "troppo zummato/attaccato ai bordi" */
     width: 90%; 
-    max-width: 1200px; /* Non diventa troppo largo su schermi giganti */
-    margin: 0 auto;    /* Centra tutto */
+    max-width: 1200px; 
+    margin: 0 auto;    
 }
 
 .bg-darker { background-color: var(--bg-secondary); }
@@ -69,20 +68,19 @@ img {
 /* =========================================
    NAVIGAZIONE (DESKTOP)
    ========================================= */
-/* NAVIGAZIONE (SEMPRE VISIBILE) */
+/* NAVIGAZIONE (SEMPRE VISIBILE - FIXED) */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
     
-    /* CAMBIAMENTO FONDAMENTALE: Da sticky a fixed */
     position: fixed; 
-    width: 100%; /* Occupa tutta la larghezza */
-    top: 0;      /* Inchiodata in alto */
-    left: 0;     /* Inchiodata a sinistra */
+    width: 100%; 
+    top: 0;      
+    left: 0;     
     
-    background-color: rgba(11, 17, 32, 0.85); /* Leggermente più trasparente per effetto cool */
+    background-color: rgba(11, 17, 32, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     z-index: 1000;
@@ -179,7 +177,7 @@ section { padding: 90px 0; }
     overflow: hidden;
     position: relative;
     top: 0;
-    display: block; /* Rende cliccabile tutto */
+    display: block;
 }
 .card:hover { top: -8px; border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); }
 
@@ -259,9 +257,14 @@ footer { text-align: center; padding: 80px 0; border-top: 1px solid rgba(255,255
 @media (max-width: 900px) {
     
     /* 1. LAYOUT CONTENUTI */
-    .container { width: 90%; padding: 0; } /* Margine 5% dai bordi */
+    .container { width: 90%; padding: 0; } 
     
-    header { padding: 60px 0; }
+    /* >>>>> QUESTA È LA MODIFICA PER LA FOTO <<<<< */
+    header { 
+        padding-top: 150px; /* Spazio extra sopra per non tagliare la foto */
+        padding-bottom: 60px; 
+    }
+    
     .hero-content { flex-direction: column-reverse; text-align: center; gap: 30px; }
     
     .img-col { justify-content: center; }
@@ -306,7 +309,6 @@ footer { text-align: center; padding: 80px 0; border-top: 1px solid rgba(255,255
         transform: translateX(100%); 
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
         
-        /* IL SEGRETO: Nascondi quando è chiuso per bloccare lo swipe */
         visibility: hidden; 
         
         backdrop-filter: blur(10px);
@@ -316,7 +318,7 @@ footer { text-align: center; padding: 80px 0; border-top: 1px solid rgba(255,255
 
     nav ul.active {
         transform: translateX(0);
-        visibility: visible; /* Mostra solo quando è attivo */
+        visibility: visible; 
     }
 
     nav ul li a { font-size: 1.5rem; font-weight: 600; }
