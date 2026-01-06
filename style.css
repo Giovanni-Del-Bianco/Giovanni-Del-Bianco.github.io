@@ -11,22 +11,28 @@
     --accent-dev: #3b82f6;      /* Blu Code */
 }
 
-/* RESET E BASE */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* RESET E BASE BLINDATO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden; /* Blocca scorrimento orizzontale a livello radice */
+}
 
 body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Blocca scorrimento orizzontale a livello corpo */
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.7;
-    overflow-x: hidden; /* FONDAMENTALE: Impedisce lo scroll laterale su mobile */
+    position: relative;
 }
-
-a { text-decoration: none; color: inherit; transition: 0.3s; }
-ul { list-style: none; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
-.bg-darker { background-color: var(--bg-secondary); }
 
 /* NAVIGAZIONE */
 nav {
@@ -87,21 +93,29 @@ nav ul li a:hover { color: var(--text-primary); }
     nav ul {
         position: fixed;
         top: 0;
-        right: -100%; /* Nascosto a destra */
-        width: 100%;  /* Copre TUTTO lo schermo */
-        height: 100vh;
-        background-color: rgba(11, 17, 32, 0.98); /* Sfondo quasi solido */
+        right: 0;
+        width: 100%;       
+        height: 100vh;     
+        background-color: rgba(11, 17, 32, 0.98); 
+        
+        /* FLEXBOX per centrare i link */
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 40px;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animazione fluida */
+        
+        /* IL TRUCCO: Usa transform invece di right */
+        transform: translateX(100%); 
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        
         backdrop-filter: blur(10px);
-        z-index: 1500; /* Sopra a tutto */
+        z-index: 1500;
     }
 
+    /* Quando la classe active viene aggiunta da JS */
     nav ul.active {
-        right: 0; /* Appare */
+        transform: translateX(0); /* Riporta il menu al centro */
     }
 
     nav ul li a { 
