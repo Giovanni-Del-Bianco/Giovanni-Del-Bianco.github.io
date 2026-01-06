@@ -39,11 +39,16 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px; /* Ridotto leggermente per mobile */
+    padding: 15px 30px;
     position: sticky;
     top: 0;
     background-color: rgba(11, 17, 32, 0.95);
+    
+    /* AGGIUNGI QUESTA RIGA PER SAFARI/IPHONE */
+    -webkit-backdrop-filter: blur(12px);
+    /* Questa è quella standard che avevi già */
     backdrop-filter: blur(12px);
+    
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
