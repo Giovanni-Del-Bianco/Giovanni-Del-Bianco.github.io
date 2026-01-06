@@ -306,7 +306,7 @@
         </div>
     </footer>
 
-    <!-- SCRIPT MENU MOBILE AVANZATO -->
+    <!-- SCRIPT MENU MOBILE (CORRETTO) -->
     <script>
         function toggleMenu() {
             const nav = document.getElementById('nav-links');
@@ -314,11 +314,13 @@
             
             nav.classList.toggle('active');
             
-            // Blocca lo scroll del sito quando il menu è aperto
             if (nav.classList.contains('active')) {
+                // Quando apro: Blocco tutto lo scroll
                 body.style.overflow = "hidden";
             } else {
-                body.style.overflow = "auto";
+                // Quando chiudo: Pulisco lo stile inline.
+                // Così torna a comandare il CSS (che ha overflow-x: hidden)
+                body.style.overflow = "";
             }
         }
     </script>
