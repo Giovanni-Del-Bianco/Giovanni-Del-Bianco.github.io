@@ -20,6 +20,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.7;
+    overflow-x: hidden; /* FONDAMENTALE: Impedisce lo scroll laterale su mobile */
 }
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
@@ -65,32 +66,127 @@ nav ul li a:hover { color: var(--text-primary); }
     z-index: 1001;
 }
 
-/* RESPONSIVE NAV (MOBILE) */
-@media (max-width: 768px) {
-    .menu-icon { display: block; } /* Mostra l'hamburger */
+/* =========================================
+   RESPONSIVE MOBILE (IMPECCABILE)
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    /* 1. NAVIGAZIONE FULL SCREEN */
+    nav { 
+        padding: 15px 20px; 
+        justify-content: space-between;
+    }
+
+    .menu-icon { 
+        display: block; 
+        font-size: 1.8rem; /* Icona più grande e toccabile */
+        z-index: 2000;
+    }
 
     nav ul {
         position: fixed;
         top: 0;
         right: -100%; /* Nascosto a destra */
-        width: 70%;   /* Occupa il 70% dello schermo */
+        width: 100%;  /* Copre TUTTO lo schermo */
         height: 100vh;
-        background-color: var(--bg-secondary);
+        background-color: rgba(11, 17, 32, 0.98); /* Sfondo quasi solido */
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 40px;
-        transition: 0.4s ease-in-out;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animazione fluida */
+        backdrop-filter: blur(10px);
+        z-index: 1500; /* Sopra a tutto */
     }
 
-    /* Classe che viene aggiunta con JS quando apri il menu */
     nav ul.active {
-        right: 0; /* Scivola dentro */
+        right: 0; /* Appare */
     }
 
-    nav ul li a { font-size: 1.2rem; }
+    nav ul li a { 
+        font-size: 1.5rem; /* Link grandi e facili da premere */
+        font-weight: 600;
+    }
+
+    /* 2. HERO SECTION CENTRATA */
+    header { padding: 60px 0; }
+    
+    .hero-content { 
+        flex-direction: column-reverse; /* Foto sopra, testo sotto */
+        text-align: center; 
+        gap: 30px;
+    }
+    
+    .text-col { width: 100%; }
+    
+    .img-col { 
+        width: 100%; 
+        justify-content: center; 
+        margin-bottom: 20px; 
+    }
+    
+    .img-col img {
+        width: 200px; 
+        height: 200px; 
+        border-width: 3px;
+    }
+
+    h1 { font-size: 2.5rem; margin-top: 10px; }
+    
+    header p { margin: 0 auto 30px auto; } /* Centra il paragrafo */
+
+    .social-links { 
+        justify-content: center; 
+        flex-wrap: wrap; 
+        gap: 10px; 
+    }
+
+    /* 3. SEZIONI E GRIGLIE */
+    section { padding: 60px 0; }
+    
+    .section-title { 
+        justify-content: center; /* Titoli centrati */
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle { text-align: center; margin-bottom: 40px; }
+
+    .grid { 
+        grid-template-columns: 1fr; /* Una sola colonna per le card */
+        gap: 40px; 
+        padding: 0 10px;
+    }
+
+    /* 4. ABOUT ME & TIMELINE */
+    .about-grid { 
+        grid-template-columns: 1fr; 
+        gap: 50px; 
+    }
+
+    .about-text { text-align: center; } /* Testo bio centrato */
+    
+    .tech-grid { 
+        justify-content: center; /* Badge centrati */
+    }
+
+    /* Timeline aggiustata per mobile */
+    .about-timeline {
+        margin-left: 15px; /* Più spazio a sinistra */
+        border-left: 2px solid rgba(255,255,255,0.1);
+    }
+    
+    .timeline-item { padding-left: 25px; }
+    
+    .timeline-content h4 { font-size: 1.1rem; }
+
+    /* 5. FOOTER */
+    .contact-big a { 
+        font-size: 1.1rem; /* Email più piccola per non uscire dallo schermo */
+        word-break: break-all; /* Spezza l'email se troppo lunga */
+    }
 }
+
 
 /* HERO */
 header { padding: 100px 0; }

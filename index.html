@@ -306,11 +306,20 @@
         </div>
     </footer>
 
-    <!-- SCRIPT MENU MOBILE -->
+    <!-- SCRIPT MENU MOBILE AVANZATO -->
     <script>
         function toggleMenu() {
             const nav = document.getElementById('nav-links');
+            const body = document.body;
+            
             nav.classList.toggle('active');
+            
+            // Blocca lo scroll del sito quando il menu è aperto
+            if (nav.classList.contains('active')) {
+                body.style.overflow = "hidden";
+            } else {
+                body.style.overflow = "auto";
+            }
         }
     </script>
 
