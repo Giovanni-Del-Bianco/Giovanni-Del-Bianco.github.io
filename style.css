@@ -1,17 +1,21 @@
-/* VARIABILI COLORI */
+/* =========================================
+   VARIABILI E COLORI
+   ========================================= */
 :root {
     --bg-color: #0b1120;        /* Molto scuro */
     --bg-secondary: #161f32;    /* Leggermente più chiaro */
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
+    --text-primary: #f1f5f9;    /* Bianco quasi puro */
+    --text-secondary: #94a3b8;  /* Grigio/Bluastro */
     
     /* ACCENTI */
-    --accent-cyber: #10b981;    /* Verde Matrix/Cyber */
-    --accent-quantum: #a855f7;  /* Viola/Indaco */
+    --accent-cyber: #10b981;    /* Verde Matrix */
+    --accent-quantum: #a855f7;  /* Viola Neon */
     --accent-dev: #3b82f6;      /* Blu Code */
 }
 
-/* RESET E BASE BLINDATO */
+/* =========================================
+   RESET E BASE (BLINDATO)
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -20,13 +24,13 @@
 
 html {
     width: 100%;
-    overflow-x: hidden; /* Blocca scorrimento orizzontale a livello radice */
+    overflow-x: hidden; /* Blocca scorrimento orizzontale */
 }
 
 body {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden; /* Blocca scorrimento orizzontale a livello corpo */
+    overflow-x: hidden; /* Doppio blocco per sicurezza */
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-primary);
@@ -34,28 +38,54 @@ body {
     position: relative;
 }
 
-/* NAVIGAZIONE */
+/* Rimuove le sottolineature da TUTTI i link */
+a { 
+    text-decoration: none !important; 
+    color: inherit; 
+    transition: 0.3s; 
+}
+
+ul { list-style: none; }
+
+/* Impedisce alle immagini di uscire dai bordi */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================
+   LAYOUT GENERALE
+   ========================================= */
+.container {
+    /* Questo risolve il problema "troppo zummato/attaccato ai bordi" */
+    width: 90%; 
+    max-width: 1200px; /* Non diventa troppo largo su schermi giganti */
+    margin: 0 auto;    /* Centra tutto */
+}
+
+.bg-darker { background-color: var(--bg-secondary); }
+
+/* =========================================
+   NAVIGAZIONE (DESKTOP)
+   ========================================= */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 15px 5%; /* Spaziatura laterale dinamica */
     position: sticky;
     top: 0;
     background-color: rgba(11, 17, 32, 0.95);
-    
-    /* AGGIUNGI QUESTA RIGA PER SAFARI/IPHONE */
-    -webkit-backdrop-filter: blur(12px);
-    /* Questa è quella standard che avevi già */
     backdrop-filter: blur(12px);
-    
+    -webkit-backdrop-filter: blur(12px); /* Per iPhone */
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.logo { font-weight: 700; font-size: 1.4rem; letter-spacing: -0.5px; z-index: 1001; }
+.logo { font-weight: 700; font-size: 1.5rem; z-index: 1001; }
 
-/* Menu Desktop Standard */
+/* Menu Desktop */
 nav ul { display: flex; gap: 25px; align-items: center; }
 nav ul li a { color: var(--text-secondary); font-size: 0.95rem; font-weight: 500; }
 nav ul li a:hover { color: var(--text-primary); }
@@ -74,142 +104,12 @@ nav ul li a:hover { color: var(--text-primary); }
     font-size: 1.5rem;
     color: var(--text-primary);
     cursor: pointer;
-    z-index: 1001;
+    z-index: 2001;
 }
 
 /* =========================================
-   RESPONSIVE MOBILE (IMPECCABILE)
+   HERO SECTION
    ========================================= */
-
-@media (max-width: 900px) {
-
-    /* 1. NAVIGAZIONE FULL SCREEN */
-    nav { 
-        padding: 15px 20px; 
-        justify-content: space-between;
-    }
-
-    .menu-icon { 
-        display: block; 
-        font-size: 1.8rem; /* Icona più grande e toccabile */
-        z-index: 2000;
-    }
-
-    nav ul {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;       
-        height: 100vh;     
-        background-color: rgba(11, 17, 32, 0.98); 
-        
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        
-        transform: translateX(100%); 
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        
-        /* AGGIUNGI QUESTA RIGA PER SAFARI/IPHONE */
-        -webkit-backdrop-filter: blur(10px);
-        /* Questa è quella standard */
-        backdrop-filter: blur(10px);
-        
-        z-index: 1500;
-    }
-
-    /* Quando la classe active viene aggiunta da JS */
-    nav ul.active {
-        transform: translateX(0); /* Riporta il menu al centro */
-    }
-
-    nav ul li a { 
-        font-size: 1.5rem; /* Link grandi e facili da premere */
-        font-weight: 600;
-    }
-
-    /* 2. HERO SECTION CENTRATA */
-    header { padding: 60px 0; }
-    
-    .hero-content { 
-        flex-direction: column-reverse; /* Foto sopra, testo sotto */
-        text-align: center; 
-        gap: 30px;
-    }
-    
-    .text-col { width: 100%; }
-    
-    .img-col { 
-        width: 100%; 
-        justify-content: center; 
-        margin-bottom: 20px; 
-    }
-    
-    .img-col img {
-        width: 200px; 
-        height: 200px; 
-        border-width: 3px;
-    }
-
-    h1 { font-size: 2.5rem; margin-top: 10px; }
-    
-    header p { margin: 0 auto 30px auto; } /* Centra il paragrafo */
-
-    .social-links { 
-        justify-content: center; 
-        flex-wrap: wrap; 
-        gap: 10px; 
-    }
-
-    /* 3. SEZIONI E GRIGLIE */
-    section { padding: 60px 0; }
-    
-    .section-title { 
-        justify-content: center; /* Titoli centrati */
-        font-size: 1.8rem;
-    }
-    
-    .section-subtitle { text-align: center; margin-bottom: 40px; }
-
-    .grid { 
-        grid-template-columns: 1fr; /* Una sola colonna per le card */
-        gap: 40px; 
-        padding: 0 10px;
-    }
-
-    /* 4. ABOUT ME & TIMELINE */
-    .about-grid { 
-        grid-template-columns: 1fr; 
-        gap: 50px; 
-    }
-
-    .about-text { text-align: center; } /* Testo bio centrato */
-    
-    .tech-grid { 
-        justify-content: center; /* Badge centrati */
-    }
-
-    /* Timeline aggiustata per mobile */
-    .about-timeline {
-        margin-left: 15px; /* Più spazio a sinistra */
-        border-left: 2px solid rgba(255,255,255,0.1);
-    }
-    
-    .timeline-item { padding-left: 25px; }
-    
-    .timeline-content h4 { font-size: 1.1rem; }
-
-    /* 5. FOOTER */
-    .contact-big a { 
-        font-size: 1.1rem; /* Email più piccola per non uscire dallo schermo */
-        word-break: break-all; /* Spezza l'email se troppo lunga */
-    }
-}
-
-
-/* HERO */
 header { padding: 100px 0; }
 .hero-content { display: flex; align-items: center; gap: 60px; }
 .text-col { flex: 1; }
@@ -246,25 +146,25 @@ header p { max-width: 550px; color: var(--text-secondary); margin-bottom: 35px; 
 }
 .img-col img:hover { filter: grayscale(0%); transform: scale(1.02); }
 
-.social-links a {
-    margin-right: 15px;
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-}
+.social-links a { margin-right: 15px; font-size: 1.1rem; color: var(--text-secondary); }
 .social-links a:hover { color: var(--accent-cyber); transform: translateY(-3px); display: inline-block;}
 
-/* SEZIONI E TITOLI */
+/* =========================================
+   SEZIONI, CARDS E GRIGLIE
+   ========================================= */
 section { padding: 90px 0; }
 .section-title { font-size: 2rem; margin-bottom: 10px; display: flex; align-items: center; gap: 12px; }
 .section-subtitle { color: var(--text-secondary); margin-bottom: 50px; }
 
-/* TITOLI COLORATI PER SEZIONE */
 #cyber .section-title i { color: var(--accent-cyber); }
 #quantum .section-title i { color: var(--accent-quantum); }
 #progetti .section-title i { color: var(--accent-dev); }
 
-/* CARDS E GRIGLIA */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 30px; 
+}
 
 .card {
     background: rgba(255,255,255,0.03);
@@ -273,6 +173,7 @@ section { padding: 90px 0; }
     overflow: hidden;
     position: relative;
     top: 0;
+    display: block; /* Rende cliccabile tutto */
 }
 .card:hover { top: -8px; border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); }
 
@@ -294,139 +195,123 @@ section { padding: 90px 0; }
 .card h4 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text-primary); }
 .card p { font-size: 0.9rem; color: var(--text-secondary); }
 
-/* --- ABOUT SECTION & TIMELINE (FIXED) --- */
-
+/* =========================================
+   ABOUT ME & TIMELINE
+   ========================================= */
 .about-grid {
     display: grid;
-    grid-template-columns: 40% 55%; /* Colonna sinistra più stretta, destra più larga */
+    grid-template-columns: 40% 55%; 
     gap: 5%;
     align-items: start;
 }
 
-/* STILE TESTI BIO */
-.about-text p {
-    margin-bottom: 20px;
-    color: var(--text-secondary);
-    font-size: 1rem;
-    text-align: justify;
-}
+.about-text p { margin-bottom: 20px; color: var(--text-secondary); text-align: justify; }
 .about-text b { color: var(--text-primary); }
 
-/* TECH STACK BADGES (Ora orizzontali) */
 .skills-container { margin-top: 40px; }
-.skills-container h4 { margin-bottom: 20px; font-size: 1.1rem; color: var(--text-primary); }
-
-.tech-grid {
-    display: flex;
-    flex-wrap: wrap; /* Fondamentale: permette di andare a capo */
-    gap: 12px;
-}
+.tech-grid { display: flex; flex-wrap: wrap; gap: 12px; }
 
 .tech-badge {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: flex; align-items: center; gap: 8px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 8px 16px;
     border-radius: 50px;
     transition: 0.3s;
-    cursor: default;
 }
+.tech-badge:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.3); }
 
-.tech-badge:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.tech-badge span { font-size: 0.9rem; font-weight: 500; color: var(--text-primary); }
-.tech-badge i { font-size: 1.1rem; }
-
-/* TIMELINE (Stile lista verticale pulita) */
-.about-timeline {
-    position: relative;
-    border-left: 2px solid rgba(255, 255, 255, 0.1);
-    padding-left: 0;
-    margin-left: 10px;
-}
-
-.timeline-item {
-    position: relative;
-    padding-left: 30px; /* Spazio per il contenuto a destra della linea */
-    margin-bottom: 50px;
-}
+/* Timeline */
+.about-timeline { position: relative; border-left: 2px solid rgba(255, 255, 255, 0.1); margin-left: 10px; }
+.timeline-item { position: relative; padding-left: 30px; margin-bottom: 50px; }
 .timeline-item:last-child { margin-bottom: 0; }
 
-/* Il pallino sulla linea */
 .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -6px; /* Centrato sulla linea */
-    top: 5px;
-    width: 10px;
-    height: 10px;
-    background: var(--accent-cyber);
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(11, 17, 32, 1); /* Bordo scuro per staccare dalla linea */
-    z-index: 2;
+    content: ''; position: absolute; left: -6px; top: 5px;
+    width: 10px; height: 10px; background: var(--accent-cyber);
+    border-radius: 50%; box-shadow: 0 0 0 4px rgba(11, 17, 32, 1);
 }
 
-.timeline-date {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--accent-cyber);
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    display: block;
-}
+.timeline-date { font-size: 0.85rem; font-weight: 700; color: var(--accent-cyber); text-transform: uppercase; margin-bottom: 5px; }
+.timeline-content h4 { font-size: 1.3rem; margin-bottom: 5px; }
+.timeline-content .school { font-size: 1rem; font-weight: 600; opacity: 0.8; margin-bottom: 10px; }
+.timeline-content .details { font-size: 0.95rem; color: var(--text-secondary); }
+.thesis-title { display: block; margin-top: 10px; font-style: italic; color: var(--accent-quantum); border-left: 2px solid var(--accent-quantum); padding-left: 12px; }
 
-.timeline-content h4 {
-    font-size: 1.3rem;
-    color: var(--text-primary);
-    margin-bottom: 5px;
-    line-height: 1.2;
-}
-
-.timeline-content .school {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    opacity: 0.8;
-    margin-bottom: 10px;
-}
-
-.timeline-content .details {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-}
-
-.thesis-title {
-    display: block;
-    margin-top: 10px;
-    font-style: italic;
-    color: var(--accent-quantum);
-    border-left: 2px solid var(--accent-quantum);
-    padding-left: 12px;
-}
-
-/* FOOTER */
+/* =========================================
+   FOOTER
+   ========================================= */
 footer { text-align: center; padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.05); }
-.contact-big a { font-size: 1.5rem; color: var(--text-primary); font-weight: 700; }
-.contact-big a:hover { color: var(--accent-cyber); text-decoration: underline; }
+.contact-big a { font-size: 1.5rem; font-weight: 700; }
+.contact-big a:hover { color: var(--accent-cyber); }
 .footer-socials { margin-top: 30px; }
-.footer-socials a { color: var(--text-secondary); }
-.footer-socials a:hover { color: var(--text-primary); }
-.separator { margin: 0 10px; color: #333; }
 .copyright { margin-top: 50px; font-size: 0.8rem; color: #444; }
 
-/* RESPONSIVE */
+/* =========================================
+   RESPONSIVE MOBILE (IL FIX DEFINITIVO)
+   ========================================= */
 @media (max-width: 900px) {
-    .about-grid { grid-template-columns: 1fr; gap: 60px; }
     
-    .hero-content { flex-direction: column-reverse; text-align: center; }
-    .img-col { justify-content: center; margin-bottom: 30px; }
+    /* 1. LAYOUT CONTENUTI */
+    .container { width: 90%; padding: 0; } /* Margine 5% dai bordi */
+    
+    header { padding: 60px 0; }
+    .hero-content { flex-direction: column-reverse; text-align: center; gap: 30px; }
+    
+    .img-col { justify-content: center; }
+    .img-col img { width: 220px; height: 220px; }
+    
     h1 { font-size: 2.5rem; }
     
-    nav { flex-direction: column; gap: 15px; padding: 20px; }
+    header p { margin: 0 auto 30px auto; }
+    .social-links { justify-content: center; flex-wrap: wrap; }
+
+    /* Griglie a singola colonna */
+    .grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 50px; }
+    
+    /* Titoli centrati su mobile */
+    .section-title { justify-content: center; text-align: center; }
+    .section-subtitle { text-align: center; }
+
+    /* Timeline più leggibile */
+    .timeline-item { padding-left: 20px; }
+
+    /* Footer fix */
+    .contact-big a { font-size: 1.1rem; word-break: break-all; }
+
+    /* 2. MENU MOBILE BLINDATO */
+    .menu-icon { display: block; }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;       
+        height: 100vh;     
+        background-color: rgba(11, 17, 32, 0.98); 
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        
+        transform: translateX(100%); 
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        /* IL SEGRETO: Nascondi quando è chiuso per bloccare lo swipe */
+        visibility: hidden; 
+        
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 1500;
+    }
+
+    nav ul.active {
+        transform: translateX(0);
+        visibility: visible; /* Mostra solo quando è attivo */
+    }
+
+    nav ul li a { font-size: 1.5rem; font-weight: 600; }
 }
